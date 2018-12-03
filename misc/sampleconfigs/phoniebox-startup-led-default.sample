@@ -1,0 +1,13 @@
+[Unit]
+Description=Phoniebox Startup Status LED
+After=network.target iptables.service firewalld.service rfid-reader.service
+
+[Service]
+User=pi
+Group=pi
+Type=oneshot
+WorkingDirectory=/home/pi/RPi-Jukebox-RFID
+ExecStart=/usr/bin/python2 /home/pi/RPi-Jukebox-RFID/scripts/status-led.py
+
+[Install]
+WantedBy=multi-user.target
