@@ -45,15 +45,15 @@ def rotaryChangeCW():
 def rotaryChangeCCW():
    check_call("./scripts/playout_controls.sh -c=volumedown", shell=True)
 
-def switchPressed(dummy):
+def switchPressed():
    check_call("./scripts/playout_controls.sh -c=mute", shell=True)
 
 
 if __name__ == "__main__":
 
-   CLOCKPIN = 13
-   DATAPIN = 11
-   SWITCHPIN = 15
+   CLOCKPIN = 27
+   DATAPIN = 17
+   SWITCHPIN = 22
 
    GPIO.setmode(GPIO.BCM)
 
