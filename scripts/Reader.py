@@ -47,4 +47,4 @@ class Reader:
 				stri+=self.keys[ event.code ]
 				#print( keys[ event.code ] )
 				key = ecodes.KEY[ event.code ]
-return stri[:-1]
+		return stri[:-1]

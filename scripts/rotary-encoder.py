@@ -12,13 +12,13 @@
 #
 #       .---------------.                      .---------------.
 #       |               |                      |               |
-#       |           CLK |------o---------------| GPIO 5        |
+#       |           CLK |------o---------------| GPIO 27       |
 #       |               |      |               |               |
-#       |           DT  |------)----o----------| GPIO 6        |
+#       |           DT  |------)----o----------| GPIO 17       |
 #       |               |      |    |          |               |
-#       |           SW  |------)----)----------| GPIO 13       |
+#       |           SW  |------)----)----------| GPIO 22       |
 #       |               |      |    |          |               |
-#       |           +   |------)----)----------| 5V            |
+#       |           +   |------)----)----------| 3.3V          |
 #       |               |      |    |          |               |
 #       |           GND |------)----)----------| GND           |
 #       |               |      |    |          |               |
@@ -42,7 +42,6 @@ from subprocess import check_call
 
 def rotaryChangeCW():
    check_call("./scripts/playout_controls.sh -c=volumeup", shell=True)
-
 def rotaryChangeCCW():
    check_call("./scripts/playout_controls.sh -c=volumedown", shell=True)
 
@@ -52,9 +51,9 @@ def switchPressed(dummy):
 
 if __name__ == "__main__":
 
-   CLOCKPIN = 5
-   DATAPIN = 6
-   SWITCHPIN = 13
+   CLOCKPIN = 13
+   DATAPIN = 11
+   SWITCHPIN = 15
 
    GPIO.setmode(GPIO.BCM)
 
